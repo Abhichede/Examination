@@ -1,0 +1,47 @@
+<%= form_with(model: school, local: true, class: 'form-horizontal') do |form| %>
+  <div class="box-body">
+    <% if school.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+        <ul>
+        <% school.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= form.label :address, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :address, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= form.label :email, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= form.label :phone, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :phone, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="box-footer">
+    <div class="actions">
+      <%= form.submit nil, class: 'btn btn-primary pull-right' %>
+    </div>
+
+    <%= link_to 'Back', schools_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

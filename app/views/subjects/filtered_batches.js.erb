@@ -1,0 +1,3 @@
+<% if @batches %>
+  $('#subject_batch_id').html("<%= escape_javascript options_for_select(@batches.map {|batch| [batch.name, batch.id]}) %>");
+<% end %>

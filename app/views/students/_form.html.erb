@@ -1,0 +1,84 @@
+<%= form_with(model: student, local: true, class: 'form-horizontal') do |form| %>
+  <div class="box-body">
+    <% if student.errors.any? %>
+      <div id="error_explanation" class="callout callout-danger">
+        <h3><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h3>
+
+        <ul class="list-group">
+        <% student.errors.full_messages.each do |message| %>
+          <li class="list-group-item list-group-item-danger"><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :first_name, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :first_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :middle_name, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :middle_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :last_name, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :last_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :phone, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :phone, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :course_id, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :course_id, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :batch_id, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :batch_id, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :date_of_birth, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :date_of_birth, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :school_id, class: 'col-sm-2' %>
+      <div class="col-sm-10">
+        <%= form.text_field :school_id, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="box-footer">
+    <div class="actions">
+      <%= form.submit nil, class: 'btn btn-primary pull-right' %>
+      <%= link_to 'Back', students_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>
